@@ -7,6 +7,7 @@
 "use strict";
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -17,6 +18,17 @@ import {
 } from 'react-native';
 
 class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          user: undefined,
+        }
+      }
+
+    login() {
+        this.props._retrieveData({user: 1});
+    }
+
     render(){
         return (
             <View style = {styles.container}>
@@ -28,18 +40,30 @@ class Login extends React.Component {
                     />
                 </View>
                 <View style = {styles.formFrame}>
-                    <TextInput keyboardType = 'email-address' style = {styles.input} placeholder='Email' />
-                    <TextInput secureTextEntry={true} style = {styles.input} placeholder='Password' />
+                    <TextInput style = {styles.input}
+                                keyboardType = 'email-address'
+                                autoCapitalize="none" 
+                                onSubmitEditing={() => this.passwordInput.focus()} 
+                                autoCorrect={false} 
+                                returnKeyType="next" 
+                                placeholder='Email' />
+                    <TextInput style = {styles.input}
+                                returnKeyType="go" 
+                                ref={(input)=> this.passwordInput = input} 
+                                secureTextEntry={true} 
+                                placeholder='Password' />
                     <Text style = {styles.normalText}>Forgot 
-                        <Text onPress={() => {alert('Forgot email: TODO');}} 
-                            style = {styles.link}> Email</Text>
+                        <Text style = {styles.link}
+                                onPress={() => {alert('Forgot email: TODO');}} 
+                                > Email </Text>
                         <Text style = {styles.normalText}> Or </Text>
-                        <Text onPress={() => {alert('Forgot password: TODO');}} 
-                            style = {styles.link}>Password?</Text>
+                        <Text style = {styles.link}
+                                onPress={() => {alert('Forgot password: TODO');}} 
+                                >Password?</Text>
                     </Text>
                 </View>
                 <View style = {styles.botFrame}>
-                    <TouchableOpacity onPress={() => {alert('Submit: TODO');}} 
+                    <TouchableOpacity onPress={() => this.login()} 
                         style = {styles.buttonStyle}>
                         <Text style = {styles.buttonText}>Log In</Text>
                     </TouchableOpacity>
@@ -52,6 +76,11 @@ class Login extends React.Component {
       );    
     }
 };
+
+Login.propTypes = {
+    _retrieveData: PropTypes.func.isRequired,
+
+  };
 
 const styles = StyleSheet.create({
     container: {
