@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
         width: '76%',
         alignContent: 'center',
         alignItems: 'center'
-
     },
     input: {
         paddingTop: 5,
