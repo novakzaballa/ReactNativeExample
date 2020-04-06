@@ -5,11 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Android (Hermes) - Experimental",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnativedirect",
+            "request": "launch",
+            "platform": "android"
+        },
+        {
+            "name": "Debug iOS",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnative",
+            "request": "launch",
+            "platform": "ios",
+            "runArguments": ["--simulator", "iPhone 11" ]
+        },
+        {
             "name": "Debug Android",
             "cwd": "${workspaceFolder}",
             "type": "reactnative",
             "request": "launch",
-            "platform": "android"
+            "platform": "android",
+            "target": "emulator-5554"
         }
     ]
 }
