@@ -3,7 +3,7 @@ This is a code exmaple writeen by Novak Zaballa. It is code challenge sent by a 
 
 ## Description
 
-This React Native App shows a single page containing tabular sales data to be aquired from a REST API, but mocked statically in a JSON for the code challenge pruposes. The App show the data and is able to filter the data by category and other criteria, with one click, offering buttons for this purpose. The Aoo also shows sales agregates at the top, that changes dinamically when filters are applied. This project uses redux as per customer request, and does not use react hooks.
+This React Native App shows a single page containing tabular sales data to be aquired from a REST API, but mocked statically in a JSON for the code challenge pruposes. The App show the data and is able to filter the data by category and other criteria, with one click, offering buttons for this purpose. The Aoo also shows sales agregates at the top, that changes dinamically when filters are applied. This project uses redux as per customer request, and does not use react hooks. No feature based branching was necesary or requested also.
 
 ## Setup
 
